@@ -36,6 +36,10 @@ g.add((lajoconde, DCTERMS['subject'], mona_lisa))
 # print graph
 print(g.serialize(format='ttl'))
 
+# Replace Literal value
+g.set((bob, SDO['birthDate'], Literal('1990-01-01', datatype=XSD.date)))
+g.set((mona_lisa, DCTERMS['title'], Literal('La Joconde', lang='fr')))
+
 # Remove triples from graph
 g.remove((mona_lisa, None, None))
 
